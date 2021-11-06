@@ -2,6 +2,7 @@
 
 namespace NathanDunn\Countries\Jobs;
 
+use App\Countries\Jobs\CreateCountry;
 use NathanDunn\Countries\CountryRepository;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Bus\Queueable;
