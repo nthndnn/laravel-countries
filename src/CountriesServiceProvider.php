@@ -11,7 +11,7 @@ class CountriesServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('countries')
+            ->name('laravel-countries')
             ->hasConfigFile()
             ->hasMigrations(
                 'create_countries_table',
