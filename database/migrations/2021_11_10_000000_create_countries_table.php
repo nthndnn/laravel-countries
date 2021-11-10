@@ -17,7 +17,7 @@ class CreateCountriesTable extends Migration
             $table->id();
             $table->string('name_official');
             $table->string('name_common');
-            $table->string('region')->nullable();
+            $table->string('region');
             $table->string('subregion')->nullable();
             $table->string('alpha_2_code', 2)->unique();
             $table->string('alpha_3_code', 3)->unique();
