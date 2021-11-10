@@ -2,22 +2,18 @@
 
 namespace NathanDunn\Countries;
 
+use Illuminate\Support\ServiceProvider;
 use NathanDunn\Countries\Commands\SyncCountries;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class CountriesServiceProvider extends PackageServiceProvider
+class CountriesServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    /**
+     * Bootstrap the package services.
+     */
+    public function boot(): void
     {
-        $package
-            ->name('laravel-countries')
-            ->hasConfigFile()
-            ->hasMigrations(
-                '2021_11_10_000000_create_countries_table',
-                '2021_11_10_000001_create_currencies_table',
-                '2021_11_10_000003_create_country_currency_table'
-            )
-            ->hasCommands(SyncCountries::class);
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+
+        $this->commands(SyncCountries::class);
     }
 }
