@@ -1,9 +1,7 @@
 <?php
 
-namespace NathanDunn\Countries\Jobs;
+namespace NathanDunn\Countries\Currencies\Jobs;
 
-use App\Countries\Jobs\CreateCountry;
-use NathanDunn\Countries\CountryRepository;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -11,8 +9,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
+use NathanDunn\Countries\Currencies\CurrencyRepository;
 
-class SyncCountry implements ShouldQueue
+class SyncCurrency implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -33,16 +32,16 @@ class SyncCountry implements ShouldQueue
      *
      * @return void
      */
-    public function handle(CountryRepository $countryRepository, Dispatcher $jobDispatcher)
+    public function handle(CurrencyRepository $currencyRepository, Dispatcher $jobDispatcher)
     {
-        $country = $countryRepository->firstByAlpha3Code(Arr::get($this->data, 'alpha_3_code'));
+        $currency = $currencyRepository->firstByCode(Arr::get($this->data, 'code'));
 
-        if (!$country) {
-            $jobDispatcher->dispatch(new CreateCountry($this->data));
+        if (!$currency) {
+            $jobDispatcher->dispatch(new CreateCurrency($this->data));
 
             return;
         }
 
-        $jobDispatcher->dispatch(new UpdateCountry($country, $this->data));
+        $jobDispatcher->dispatch(new UpdateCurrency($currency, $this->data));
     }
 }
