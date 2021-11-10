@@ -12,7 +12,7 @@ abstract class CountryJob
 {
     protected function fillCountry(Country $country, array $data): Country
     {
-        $latLong = Arr::get($data, 'latlng');
+        $latLong = Arr::get($data, 'latlng', []);
 
         $country->name_official = Arr::get($data, 'name.official');
         $country->name_common = Arr::get($data, 'name.common');
