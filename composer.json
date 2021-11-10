@@ -1,10 +1,13 @@
 {
     "name": "nathandunn/laravel-countries",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Nathan Dunn",
-            "email": "github@nathandunn.uk"
+            "email": "github@nathandunn.uk",
+            "role": "Developer",
+            "homepage": "https://nathandunn.uk"
         }
     ],
     "require": {
