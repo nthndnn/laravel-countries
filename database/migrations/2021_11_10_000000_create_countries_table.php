@@ -21,6 +21,10 @@ class CreateCountriesTable extends Migration
             $table->string('subregion')->nullable();
             $table->string('alpha_2_code', 2)->unique();
             $table->string('alpha_3_code', 3)->unique();
+            $table->decimal('latitude', 10, 8);
+            $table->decimal('longitude', 11, 8);
+            $table->boolean('independent')->nullable();
+            $table->boolean('un_member');
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class CreateCountryCurrencyTable extends Migration
     {
         Schema::create('country_currency', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('country_id')->constrained();
-            $table->foreignId('currency_id')->constrained();
+            $table->foreignId('country_id')->index()->constrained();
+            $table->foreignId('currency_id')->index()->constrained();
             $table->timestamps();
         });
     }
@@ -30,4 +30,4 @@ class CreateCountryCurrencyTable extends Migration
     {
         Schema::dropIfExists('country_currency');
     }
-}
+};
