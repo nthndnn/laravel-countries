@@ -16,6 +16,7 @@ abstract class CountryJob
 
         $country->name_official = Arr::get($data, 'name.official');
         $country->name_common = Arr::get($data, 'name.common');
+        $country->capital = Arr::get($data, 'capital');
         $country->region = Arr::get($data, 'region');
         $country->subregion = Arr::get($data, 'subregion');
         $country->alpha_2_code = Arr::get($data, 'cca2');
