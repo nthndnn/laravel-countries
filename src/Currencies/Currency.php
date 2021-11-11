@@ -15,6 +15,6 @@ class Currency extends Model
 
     public function countries(): BelongsToMany
     {
-        return $this->belongsToMany(Country::class);
+        return $this->belongsToMany(Country::class)->withTimestamps();
     }
 }
