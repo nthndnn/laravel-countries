@@ -8,6 +8,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
+use NathanDunn\Countries\Continents\ContinentRepository;
 use NathanDunn\Countries\Countries\Country;
 use NathanDunn\Countries\Currencies\CurrencyRepository;
 
@@ -35,10 +36,14 @@ class UpdateCountry extends CountryJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle(CurrencyRepository $currencyRepository)
+    public function handle(CurrencyRepository $currencyRepository, ContinentRepository $continentRepository)
     {
+        $continents = Arr::get($this->data, 'continents');
+        $continent = $continentRepository->firstByName(Arr::first($continents));
+
         $country = $this->country;
         $country = $this->fillCountry($country, $this->data);
+        $country->continent()->associate($continent);
         $country->save();
 
         $currencies = Arr::get($this->data, 'currencies', []);
