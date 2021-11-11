@@ -17,7 +17,7 @@ class CreateCountriesTable extends Migration
             $table->id();
             $table->string('name_official');
             $table->string('name_common');
-            $table->foreignId('continent_id');
+            $table->foreignId('continent_id')->constrained();
             $table->json('capital')->nullable();
             $table->string('region');
             $table->string('subregion')->nullable();
