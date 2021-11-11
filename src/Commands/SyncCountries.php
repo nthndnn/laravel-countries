@@ -28,6 +28,9 @@ class SyncCountries extends Command
      */
     protected $description = 'Sync countries from source';
 
+    /**
+     * @var Dispatcher $jobDispatcher
+     */
     protected Dispatcher $jobDispatcher;
 
     /**
@@ -46,6 +49,7 @@ class SyncCountries extends Command
      * Execute the console command.
      *
      * @return int
+     * @throws Exception
      */
     public function handle()
     {
@@ -76,9 +80,9 @@ class SyncCountries extends Command
             ->unique()
             ->sort()
             ->each(function ($continent) {
-                $this->line(sprintf('Syncing continent %s...', $continent));
-
                 $this->jobDispatcher->dispatchSync(new SyncContinent($continent));
+
+                $this->line(sprintf('Syncing continent %s...', $continent));
             });
     }
 
@@ -96,9 +100,9 @@ class SyncCountries extends Command
             ->unique('code')
             ->sortBy('code')
             ->each(function ($currency) {
-                $this->line(sprintf('Syncing currency %s...', Arr::get($currency, 'name')));
-
                 $this->jobDispatcher->dispatchSync(new SyncCurrency($currency));
+
+                $this->line(sprintf('Syncing currency %s...', Arr::get($currency, 'name')));
             });
     }
 
@@ -106,6 +110,7 @@ class SyncCountries extends Command
     {
         $countries->each(function ($country) {
             $this->jobDispatcher->dispatch(new SyncCountry($country));
+
             $this->line(sprintf('Syncing %s...', Arr::get($country, 'name.common')));
         });
     }
