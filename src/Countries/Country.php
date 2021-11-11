@@ -15,6 +15,10 @@ class Country extends Model
 
     protected $table = 'countries';
 
+    protected $casts = [
+        'capital' => 'array',
+    ];
+
     public function continent(): BelongsTo
     {
         return $this->belongsTo(Continent::class);
