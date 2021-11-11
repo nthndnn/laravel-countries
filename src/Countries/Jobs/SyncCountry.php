@@ -10,7 +10,6 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Arr;
 use NathanDunn\Countries\Countries\CountryRepository;
-use NathanDunn\Countries\Currencies\CurrencyRepository;
 
 class SyncCountry implements ShouldQueue
 {
@@ -33,11 +32,7 @@ class SyncCountry implements ShouldQueue
      *
      * @return void
      */
-    public function handle(
-        CountryRepository $countryRepository,
-        CurrencyRepository $currencyRepository,
-        Dispatcher $jobDispatcher
-    )
+    public function handle(CountryRepository $countryRepository, Dispatcher $jobDispatcher)
     {
         $country = $countryRepository->firstByAlpha3Code(Arr::get($this->data, 'cca3'));
 
