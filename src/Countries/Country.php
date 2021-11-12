@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Currencies\Currency;
+use NathanDunn\Countries\Database\Factories\CountryFactory;
 
 class Country extends Model
 {
@@ -27,5 +28,10 @@ class Country extends Model
     public function currencies(): BelongsToMany
     {
         return $this->belongsToMany(Currency::class)->withTimestamps();
+    }
+
+    public function newFactory()
+    {
+        return CountryFactory::new();
     }
 }
