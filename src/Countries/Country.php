@@ -30,7 +30,7 @@ class Country extends Model
         return $this->belongsToMany(Currency::class)->withTimestamps();
     }
 
-    public function newFactory()
+    public static function newFactory()
     {
         return CountryFactory::new();
     }

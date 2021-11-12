@@ -19,7 +19,7 @@ class Continent extends Model
         return $this->hasMany(Country::class);
     }
 
-    public function newFactory()
+    public static function newFactory()
     {
         return ContinentFactory::new();
     }
