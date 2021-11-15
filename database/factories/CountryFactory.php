@@ -3,6 +3,7 @@
 namespace NathanDunn\Countries\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Countries\Country;
 
 class CountryFactory extends Factory
@@ -32,6 +33,7 @@ class CountryFactory extends Factory
         } while ($country);
 
         return [
+            'continent_id' => Continent::factory()->create()->id,
             'name_official' => $countryName,
             'name_common' => $countryName,
             'capital' => [$this->faker->city()],
