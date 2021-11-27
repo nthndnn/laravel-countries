@@ -36,7 +36,8 @@
     "autoload": {
         "psr-4": {
             "NathanDunn\\Countries\\": "src",
-            "NathanDunn\\Countries\\Database\\Factories\\": "database/factories"
+            "NathanDunn\\Countries\\Database\\Factories\\": "database/factories",
+            "NathanDunn\\Countries\\Database\\Seeders\\": "database/seeders"
         }
     },
     "autoload-dev": {
