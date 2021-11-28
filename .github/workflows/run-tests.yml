@@ -34,7 +34,14 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        run: composer install --dev
+        run: composer install --prefer-dist --no-interaction --no-suggest --dev
 
-      - name: Execute tests
-        run: vendor/bin/pest
+      - name: Run tests
+        run: vendor/bin/phpunit --coverage-clover coverage.xml
+
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: coverage.xml
+          fail_ci_if_error: true
+          verbose: true
