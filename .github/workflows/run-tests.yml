@@ -30,14 +30,14 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo, xdebug
           coverage: none
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-interaction --no-suggest --dev
 
       - name: Run tests
-        run: vendor/bin/phpunit --coverage-clover coverage.xml
+        run: ./vendor/bin/phpunit --coverage-clover coverage.xml
 
       - uses: codecov/codecov-action@v1
         with:
