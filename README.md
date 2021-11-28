@@ -25,7 +25,7 @@ php artisan countries:sync
 ```
 
 ### Seeder
-You may find you'd like to add syncing countries as part of your development/staging environment. If this is the case, 
+You may find you'd like to add syncing countries as part of your development/staging environment. You may add `NathanDunn\Countries\Database\Seeders\CountriesSeeder` to your `DatabaseSeeder`.
 
 ```php
 <?php
