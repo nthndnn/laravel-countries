@@ -23,4 +23,18 @@ abstract class TestCase extends BaseTestCase
             CountriesServiceProvider::class,
         ];
     }
+
+    protected function getCountries(): array
+    {
+        $countries = file_get_contents(__DIR__ . '/countries.json');
+
+        return json_decode($countries, true);
+    }
+
+    protected function getCurrency(): array
+    {
+        $countries = file_get_contents(__DIR__ . '/currency.json');
+
+        return json_decode($countries, true);
+    }
 }
