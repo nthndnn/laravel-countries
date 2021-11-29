@@ -1,6 +1,6 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Countries\Jobs;
+namespace NathanDunn\Countries\Tests\Countries\Commands;
 
 use Illuminate\Support\Facades\Http;
 use NathanDunn\Countries\Tests\TestCase;
