@@ -12,7 +12,11 @@ class SyncCountriesTest extends TestCase
     {
         $countries = $this->getCountries();
         Http::fake([
-            'restcountries.com/v3.1/all' => Http::response($countries, 200, ['Content-Type' => 'application/json']),
+            'restcountries.com/v3.1/all' => Http::response(
+                $countries,
+                200,
+                ['Content-Type' => 'application/json']
+            ),
         ]);
 
         $this->artisan('countries:sync')->assertExitCode(0);
