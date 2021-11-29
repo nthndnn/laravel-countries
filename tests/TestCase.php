@@ -24,6 +24,17 @@ abstract class TestCase extends BaseTestCase
         ];
     }
 
+    /**
+     * Define environment setup.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
+     */
+    protected function defineEnvironment($app)
+    {
+        $app['config']->set('countries.url', 'https://restcountries.com/v3.1/all');
+    }
+
     protected function getCountries(): array
     {
         $countries = file_get_contents(__DIR__ . '/countries.json');
