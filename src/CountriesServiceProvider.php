@@ -3,7 +3,7 @@
 namespace NathanDunn\Countries;
 
 use Illuminate\Support\ServiceProvider;
-use NathanDunn\Countries\Commands\SyncCountries;
+use NathanDunn\Countries\Countries\Commands\SyncCountries;
 
 class CountriesServiceProvider extends ServiceProvider
 {

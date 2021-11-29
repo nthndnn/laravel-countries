@@ -1,6 +1,6 @@
 <?php
 
-namespace NathanDunn\Countries\Commands;
+namespace NathanDunn\Countries\Countries\Commands;
 
 use Exception;
 use Illuminate\Bus\Dispatcher;
