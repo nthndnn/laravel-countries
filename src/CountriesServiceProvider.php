@@ -12,6 +12,10 @@ class CountriesServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->publishes([
+            __DIR__.'/../config/countries.php' => config_path('countries.php'),
+        ]);
+
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->commands(SyncCountries::class);
