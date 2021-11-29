@@ -4,6 +4,7 @@ namespace NathanDunn\Countries\Commands;
 
 use Exception;
 use Illuminate\Bus\Dispatcher;
+use Illuminate\Config\Repository as ConfigRepository;
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -33,15 +34,18 @@ class SyncCountries extends Command
      */
     protected Dispatcher $jobDispatcher;
 
+    protected ConfigRepository $config;
+
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(Dispatcher $jobDispatcher)
+    public function __construct(ConfigRepository $config, Dispatcher $jobDispatcher)
     {
         parent::__construct();
 
+        $this->config = $config;
         $this->jobDispatcher = $jobDispatcher;
     }
 
@@ -53,7 +57,8 @@ class SyncCountries extends Command
      */
     public function handle()
     {
-        $response = Http::get('https://restcountries.com/v3.1/all');
+        $url = $this->config->get('countries.url');
+        $response = Http::get($url);
         $countries = $response->collect();
 
         if ($response->serverError()) {
