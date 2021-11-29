@@ -1,8 +1,8 @@
 # Laravel Countries 🌎
 Laravel Countries provides database migrations and syncing capabilities in order to sync continents, currencies and currencies.
 
-The package uses the [REST Countries](https://restcountries.com/) API
-to maintain an up-to-date list of countries.
+Laravel Countries package uses the [REST Countries](https://restcountries.com/) API
+to maintain an up-to-date list of countries. This is in contrast to a lot of existing libraries, which rely on data stored in the repository and often becomes out-of-date.
 
 ## Installation
 
