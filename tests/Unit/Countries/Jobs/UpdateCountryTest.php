@@ -2,15 +2,12 @@
 
 namespace NathanDunn\Countries\Tests\Unit\Currencies\Jobs;
 
-use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Continents\ContinentRepository;
 use NathanDunn\Countries\Countries\Country;
 use NathanDunn\Countries\Countries\Jobs\UpdateCountry;
-use NathanDunn\Countries\Currencies\Currency;
 use NathanDunn\Countries\Currencies\CurrencyRepository;
-use NathanDunn\Countries\Currencies\Jobs\UpdateCurrency;
 use NathanDunn\Countries\Tests\TestCase;
 
 class UpdateCountryTest extends TestCase

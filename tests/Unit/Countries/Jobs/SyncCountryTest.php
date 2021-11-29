@@ -5,11 +5,8 @@ namespace NathanDunn\Countries\Tests\Unit\Countries\Jobs;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use NathanDunn\Countries\Continents\Continent;
-use NathanDunn\Countries\Continents\ContinentRepository;
 use NathanDunn\Countries\Countries\CountryRepository;
-use NathanDunn\Countries\Countries\Jobs\CreateCountry;
 use NathanDunn\Countries\Countries\Jobs\SyncCountry;
-use NathanDunn\Countries\Currencies\CurrencyRepository;
 use NathanDunn\Countries\Tests\TestCase;
 
 class SyncCountryTest extends TestCase

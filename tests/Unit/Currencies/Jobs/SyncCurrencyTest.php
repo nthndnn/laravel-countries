@@ -5,7 +5,6 @@ namespace NathanDunn\Countries\Tests\Unit\Currencies\Jobs;
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\Arr;
 use NathanDunn\Countries\Currencies\CurrencyRepository;
-use NathanDunn\Countries\Currencies\Jobs\CreateCurrency;
 use NathanDunn\Countries\Currencies\Jobs\SyncCurrency;
 use NathanDunn\Countries\Tests\TestCase;
 
