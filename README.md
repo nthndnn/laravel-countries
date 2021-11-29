@@ -1,6 +1,8 @@
 # Laravel Countries 🌎
-Laravel Countries provides database migrations and syncing capabilities in order to maintain an up-to-date list of countries.
+Laravel Countries provides database migrations and syncing capabilities in order to sync continents, currencies and currencies.
 
+The package uses the [REST Countries](https://restcountries.com/) API
+to maintain an up-to-date list of countries.
 
 ## Installation
 
@@ -19,10 +21,13 @@ php artisan migrate
 ## Syncing countries
 
 ### Console command
+The primary method of syncing companies is by running the following command:
 
 ```bash
 php artisan countries:sync
 ```
+
+This will fetch and sync data from the API.
 
 ### Seeder
 You may find you'd like to add syncing countries as part of your development/staging environment. You may add `NathanDunn\Countries\Database\Seeders\CountriesSeeder` to your `DatabaseSeeder`.
