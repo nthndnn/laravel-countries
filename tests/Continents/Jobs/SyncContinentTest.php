@@ -1,6 +1,6 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Unit\Continents\Jobs;
+namespace NathanDunn\Countries\Tests\Continents\Jobs;
 
 use Illuminate\Bus\Dispatcher;
 use NathanDunn\Countries\Continents\ContinentRepository;

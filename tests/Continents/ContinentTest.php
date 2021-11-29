@@ -1,10 +1,10 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Unit\Continents;
+namespace NathanDunn\Countries\Tests\Continents;
 
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Countries\Country;
-use NathanDunn\Countries\Tests\Unit\ModelTest;
+use NathanDunn\Countries\Tests\ModelTest;
 
 class ContinentTest extends ModelTest
 {

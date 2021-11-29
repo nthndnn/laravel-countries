@@ -1,6 +1,6 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Unit\Countries\Jobs;
+namespace NathanDunn\Countries\Tests\Countries\Jobs;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\Arr;

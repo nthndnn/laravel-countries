@@ -1,6 +1,6 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Unit;
+namespace NathanDunn\Countries\Tests;
 
 use Illuminate\Support\Collection;
 use NathanDunn\Countries\Tests\TestCase;

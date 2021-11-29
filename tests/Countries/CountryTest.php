@@ -1,11 +1,11 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Unit\Countries;
+namespace NathanDunn\Countries\Tests\Countries;
 
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Countries\Country;
 use NathanDunn\Countries\Currencies\Currency;
-use NathanDunn\Countries\Tests\Unit\ModelTest;
+use NathanDunn\Countries\Tests\ModelTest;
 
 class CountryTest extends ModelTest
 {

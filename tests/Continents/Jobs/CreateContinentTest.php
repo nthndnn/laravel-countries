@@ -1,6 +1,6 @@
 <?php
 
-namespace NathanDunn\Countries\Tests\Unit\Continents\Jobs;
+namespace NathanDunn\Countries\Tests\Continents\Jobs;
 
 use NathanDunn\Countries\Continents\ContinentRepository;
 use NathanDunn\Countries\Continents\Jobs\CreateContinent;
