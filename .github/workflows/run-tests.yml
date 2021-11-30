@@ -42,4 +42,4 @@ jobs:
       - name: Send to Coveralls
         env:
             COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
-          run: bin/php-coveralls -v --exclude-no-stmt
+        run: bin/php-coveralls -v --exclude-no-stmt
