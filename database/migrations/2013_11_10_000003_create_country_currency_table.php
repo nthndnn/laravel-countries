@@ -30,4 +30,4 @@ class CreateCountryCurrencyTable extends Migration
     {
         Schema::dropIfExists('country_currency');
     }
-};
+}
