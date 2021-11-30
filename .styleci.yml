@@ -4,7 +4,6 @@ preset: recommended
 tab-width: 4
 use-tabs: false
 enabled:
-  - strict
   - unalign_double_arrow
 disabled:
   - align_double_arrow
