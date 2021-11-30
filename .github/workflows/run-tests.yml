@@ -37,9 +37,11 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-suggest --dev
 
       - name: Run tests
-        run: ./vendor/bin/phpunit --coverage-clover coverage/lcov.info
+        run: ./vendor/bin/phpunit --coverage-clover coverage.xml
 
       - name: Send to Coveralls
         env:
-            COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
-        run: ./vendor/bin/php-coveralls -v --exclude-no-stmt
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+        run: |
+          composer global require php-coveralls/php-coveralls
+          php-coveralls --coverage_clover=coverage.xml -v
