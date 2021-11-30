@@ -39,6 +39,9 @@ jobs:
       - name: Run tests
         run: ./vendor/bin/phpunit --coverage-clover coverage.xml
 
+    - name: Coveralls GitHub Action
+      uses: coverallsapp/github-action@1.1.3
+
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
