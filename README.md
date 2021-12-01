@@ -1,4 +1,11 @@
 # Laravel Countries 🌎
+
+[![Packagist](https://img.shields.io/packagist/dt/nathandunn/laravel-countries.svg?style=flat-square)](https://packagist.org/packages/nathandunn/laravel-countries)
+[![GitHub Workflow Status (master branch)](https://img.shields.io/github/workflow/status/nthndnn/laravel-countries/run-tests/master)](https://github.com/nthndnn/laravel-countries/actions/workflows/run-tests.yml?query=branch%3Amaster)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/nthndnn/laravel-countries.svg?style=flat-square)](https://codeclimate.com/github/nthndnn/laravel-countries)
+[![Codecov](https://img.shields.io/codecov/c/gh/nthndnn/laravel-countries?token=YF9BTSH4GN&style=flat-square)](https://app.codecov.io/gh/nthndnn/laravel-countries)
+[![StyleCI](https://github.styleci.io/repos/424978710/shield)](https://github.styleci.io/repos/424978710)
+
 Laravel Countries provides database migrations and syncing capabilities in order to sync continents, currencies and currencies.
 
 Laravel Countries package uses the [REST Countries](https://restcountries.com/) API
