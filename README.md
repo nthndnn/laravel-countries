@@ -6,9 +6,7 @@
 [![Codecov](https://img.shields.io/codecov/c/gh/nthndnn/laravel-countries?token=YF9BTSH4GN&style=flat-square)](https://app.codecov.io/gh/nthndnn/laravel-countries)
 [![StyleCI](https://github.styleci.io/repos/424978710/shield)](https://github.styleci.io/repos/424978710)
 
-Laravel Countries provides database migrations and syncing capabilities in order to sync continents, currencies and currencies.
-
-Laravel Countries package uses the [REST Countries](https://restcountries.com/) API
+Laravel Countries provides database migrations and syncing capabilities in order to sync continents, currencies and currencies. The package uses the [REST Countries](https://restcountries.com/) API
 to maintain an up-to-date list of countries. This is in contrast to a lot of existing libraries, which rely on data stored in the repository and often becomes out-of-date.
 
 ## Installation
