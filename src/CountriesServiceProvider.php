@@ -17,7 +17,8 @@ class CountriesServiceProvider extends ServiceProvider
         ]);
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/countries.php', 'countries'
+            __DIR__ . '/../config/countries.php',
+            'countries'
         );
 
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
