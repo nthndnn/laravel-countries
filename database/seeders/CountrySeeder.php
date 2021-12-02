@@ -5,7 +5,7 @@ namespace NathanDunn\Countries\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Artisan;
 
-class CountriesSeeder extends Seeder
+class CountrySeeder extends Seeder
 {
     /**
      * Run the database seeders.

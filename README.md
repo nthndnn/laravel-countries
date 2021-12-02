@@ -35,7 +35,7 @@ php artisan countries:sync
 This will fetch and sync data from the API.
 
 ### Seeder
-You may find you'd like to add syncing countries as part of your development/staging environment. You may add `NathanDunn\Countries\Database\Seeders\CountriesSeeder` to your `DatabaseSeeder`.
+You may find you'd like to add syncing countries as part of your development/staging environment. You may add `NathanDunn\Countries\Database\Seeders\CountrySeeder` to your `DatabaseSeeder`.
 
 ```php
 <?php
@@ -43,7 +43,7 @@ You may find you'd like to add syncing countries as part of your development/sta
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use NathanDunn\Countries\Database\Seeders\CountriesSeeder;
+use NathanDunn\Countries\Database\Seeders\CountrySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CountriesSeeder::class);
+        $this->call(CountrySeeder::class);
     }
 }
 ```
