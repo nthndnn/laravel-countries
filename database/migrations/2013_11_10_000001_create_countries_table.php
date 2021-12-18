@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Database\Connection;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,9 +26,15 @@ class CreateCountriesTable extends Migration
             $table->string('alpha_3_code', 3)->unique();
             $table->decimal('latitude', 10, 8)->nullable();
             $table->decimal('longitude', 11, 8)->nullable();
-            $table->boolean('independent')->nullable();
+            $table->boolean('independent');
             $table->boolean('un_member');
             $table->timestamps();
+
+            /** @var Connection $connection */
+            $connection = DB::connection();
+            if ($connection->getDriverName() === 'postgres') {
+                $table->index(['continent_id']);
+            }
         });
     }
 
