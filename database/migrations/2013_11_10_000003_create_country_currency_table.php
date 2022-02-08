@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Database\Connection;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateCountryCurrencyTable extends Migration
@@ -18,6 +20,12 @@ class CreateCountryCurrencyTable extends Migration
             $table->foreignId('country_id')->index()->constrained();
             $table->foreignId('currency_id')->index()->constrained();
             $table->timestamps();
+
+            /** @var Connection $connection */
+            $connection = DB::connection();
+            if ($connection->getDriverName() === 'postgres') {
+                $table->index(['country_id', 'currency_id']);
+            }
         });
     }
 
