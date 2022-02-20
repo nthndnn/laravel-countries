@@ -22,7 +22,7 @@ class CountryFactory extends Factory
      */
     public function definition()
     {
-        $countryName = $this->faker->country;
+        $countryName = $this->faker->country();
 
         do {
             $alpha3 = strtoupper($this->faker->lexify('???'));
