@@ -2,7 +2,7 @@
 
 namespace NathanDunn\Countries\Countries;
 
-use PackagedBy\Repositories\Repository;
+use NathanDunn\Repositories\Repository;
 
 class CountryRepository extends Repository
 {

@@ -3,7 +3,7 @@
 namespace NathanDunn\Countries\Continents;
 
 use Illuminate\Database\Eloquent\Builder;
-use PackagedBy\Repositories\Repository;
+use NathanDunn\Repositories\Repository;
 
 class ContinentRepository extends Repository
 {

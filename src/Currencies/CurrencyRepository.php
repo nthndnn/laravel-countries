@@ -3,7 +3,7 @@
 namespace NathanDunn\Countries\Currencies;
 
 use Illuminate\Database\Eloquent\Builder;
-use PackagedBy\Repositories\Repository;
+use NathanDunn\Repositories\Repository;
 
 class CurrencyRepository extends Repository
 {
