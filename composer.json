@@ -22,15 +22,13 @@
     },
     "require-dev": {
         "guzzlehttp/guzzle": "^7.4",
-        "nunomaduro/collision": "^6.1",
-        "nunomaduro/larastan": "^1.0",
-        "orchestra/testbench": "^7.0",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
+        "nunomaduro/collision": "^7.0",
+        "nunomaduro/larastan": "^2.0",
+        "orchestra/testbench": "^8.0.1",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.0",
         "spatie/laravel-ray": "^1.29"
     },
     "autoload": {
@@ -46,7 +44,10 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
