@@ -5,7 +5,7 @@ namespace NathanDunn\Countries\Tests;
 use Illuminate\Support\Collection;
 use NathanDunn\Countries\Tests\TestCase;
 
-abstract class ModelTest extends TestCase
+abstract class ModelTestCase extends TestCase
 {
     protected string $model;
 

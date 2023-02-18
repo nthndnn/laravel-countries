@@ -4,9 +4,9 @@ namespace NathanDunn\Countries\Tests\Continents;
 
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Countries\Country;
-use NathanDunn\Countries\Tests\ModelTest;
+use NathanDunn\Countries\Tests\ModelTestCase;
 
-class ContinentTest extends ModelTest
+class ContinentTestCase extends ModelTestCase
 {
     protected string $model = Continent::class;
 

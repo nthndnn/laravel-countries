@@ -5,9 +5,9 @@ namespace NathanDunn\Countries\Tests\Countries;
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Countries\Country;
 use NathanDunn\Countries\Currencies\Currency;
-use NathanDunn\Countries\Tests\ModelTest;
+use NathanDunn\Countries\Tests\ModelTestCase;
 
-class CountryTest extends ModelTest
+class CountryTestCase extends ModelTestCase
 {
     protected string $model = Country::class;
 
