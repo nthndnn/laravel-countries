@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use NathanDunn\Countries\Continents\Continent;
 use NathanDunn\Countries\Currencies\Currency;
 use NathanDunn\Countries\Database\Factories\CountryFactory;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Country extends Model
 {
@@ -19,6 +20,11 @@ class Country extends Model
     protected $casts = [
         'capital' => 'array',
     ];
+
+    protected function name(): Attribute
+    {
+        return Attribute::get(fn () => $this->name_common ?? $this->name_official);
+    }
 
     public function continent(): BelongsTo
     {
